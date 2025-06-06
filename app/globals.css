@@ -1,0 +1,177 @@
+/* globals.css */
+@import "tailwindcss";
+
+/* Base Root Variables (Defaulting to Dark Theme, or a neutral base) */
+:root {
+  /* Current Dark Theme Variables (adjust if needed to be more consistent with new light theme) */
+  --primary-color: #3b82f6; /* A strong blue for highlights/buttons */
+  --secondary-color: #a855f7; /* Purple for secondary accents */
+
+  --background-primary: #030712; /* gray-950 */
+  --background-secondary: #111827; /* gray-900 - often for cards/sections */
+  --background-tertiary: #1f2937; /* gray-800 - for even lighter dark backgrounds */
+  --text-primary: #f3f4f6; /* gray-100 - light text */
+  --text-secondary: #9ca3af; /* gray-400 - slightly darker light text */
+  --border-color: #374151; /* gray-700 - for subtle borders */
+  --card-background: #1f2937; /* gray-800 */
+  --shadow-color: rgba(0, 0, 0, 0.7); /* Darker shadow for dark theme */
+
+  /* Specific color variables from your original setup */
+  --blue-400: #60a5fa;
+  --blue-500: #3b82f6;
+  --blue-600: #2563eb;
+  --blue-700: #1d4ed8;
+  --blue-950: #172554;
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7c3aed;
+  --purple-950: #581c87;
+  --gray-100: #f3f4f6;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+  --gray-950: #030712;
+  --white: #ffffff;
+  --green-400: #4ade80;
+  --yellow-400: #facc15;
+}
+
+/* Light Theme Variables */
+/* These variables will override the defaults when the 'light-theme' class is applied to the body or html */
+body.light-theme {
+  /* Modern Blue Primary Color Palette */
+  --primary-color: #007BFF; /* A vibrant, modern blue for main actions/emphasis */
+  --primary-color-dark: #0056b3; /* Darker shade for hover/active states */
+  --primary-color-light: #66b2ff; /* Lighter shade, perhaps for subtle gradients or outlines */
+  --secondary-color: #6c757d; /* A muted grey for secondary elements */
+
+  /* Backgrounds */
+  --background-primary: #ffffff; /* Pure white for main background */
+  --background-secondary: #f8f9fa; /* Very light grey for cards/sections */
+  --background-tertiary: #e9ecef; /* Slightly darker light grey for borders/dividers */
+
+  /* Text Colors */
+  --text-primary: #212529; /* Dark charcoal for main text */
+  --text-secondary: #495057; /* Muted dark grey for secondary text/labels */
+  --text-link: var(--primary-color); /* Links will use primary blue */
+
+  /* Borders & Shadows */
+  --border-color: #ced4da; /* Light grey for borders */
+  --card-background: #ffffff; /* White background for cards */
+  --shadow-color: rgba(0, 0, 0, 0.08); /* Lighter, subtle shadow for light theme */
+
+  /* Re-mapping some of your original colors to suit the light theme if needed,
+     or use the new variables consistently. */
+  --blue-400: #007BFF; /* Map to primary blue for consistency */
+  --blue-500: #007BFF;
+  --blue-600: #0056b3; /* Darker blue */
+  --blue-700: #004085;
+  --blue-950: #002752; /* Very dark blue for specific contrast */
+  --purple-500: #6c757d; /* Muted purple to secondary grey */
+  --purple-600: #5a6268;
+  --purple-700: #495057;
+  --purple-950: #212529;
+
+  --gray-100: #212529; /* Light text becomes dark text in light theme */
+  --gray-300: #495057;
+  --gray-400: #6c757d;
+  --gray-500: #adb5bd;
+  --gray-600: #ced4da;
+  --gray-700: #e9ecef;
+  --gray-800: #f8f9fa;
+  --gray-900: #ffffff;
+  --gray-950: #ffffff; /* Dark background becomes white in light theme */
+  --white: #212529; /* White text becomes dark text in light theme */
+
+  /* If you have specific success/error/warning colors, define them for light theme */
+  --green-400: #28a745;
+  --yellow-400: #ffc107;
+}
+
+html {
+  font-family: "Space Grotesk", sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  /* Use CSS variables for theme-dependent properties */
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+section {
+  scroll-margin-top: 50px;
+}
+
+/* Keyframe animations (remain theme-agnostic) */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.grid > div:nth-child(1).animate-fade-in-up {
+  animation-delay: 0ms;
+}
+
+.grid > div:nth-child(2).animate-fade-in-up {
+  animation-delay: 100ms;
+}
+
+.grid > div:nth-child(3).animate-fade-in-up {
+  animation-delay: 200ms;
+}
+
+.grid > div:nth-child(4).animate-fade-in-up {
+  animation-delay: 300ms;
+}
+
+
+@media (max-width: 768px) {
+  .text-5xl {
+    font-size: 2.5rem;
+  }
+
+  .text-7xl {
+    font-size: 3.5rem;
+  }
+
+  .text-xl {
+    font-size: 1.125rem;
+  }
+
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+
+  .py-24 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .py-36 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  .px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
