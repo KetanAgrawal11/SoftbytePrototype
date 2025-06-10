@@ -38,7 +38,7 @@ export default function NotFound() {
                     className="mb-8 text-lg leading-relaxed transition-colors duration-300" // Added text-lg and leading-relaxed
                     style={{ color: paragraphColor }}
                 >
-                    We're sorry, but the page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
+                    We&apos;re sorry, but the page you are looking for might have been removed, had its name changed, or is temporarily unavailable.
                     Please check the URL or return to our homepage.
                 </p>
                 <Link
