@@ -1,23 +1,66 @@
 /* globals.css */
 @import "tailwindcss";
 
-/* Base Root Variables (Defaulting to Dark Theme, or a neutral base) */
+/* Base Root Variables (Defaulting to Dark Theme) */
 :root {
-  /* Current Dark Theme Variables (adjust if needed to be more consistent with new light theme) */
-  --primary-color: #3b82f6; /* A strong blue for highlights/buttons */
-  --secondary-color: #a855f7; /* Purple for secondary accents */
+  /* Primary Brand Blue Palette */
+  --primary-color: #3b82f6;
+  /* Tailwind blue-500 */
+  --primary-color-rgb: 59, 130, 246;
+  --primary-color-dark: #2563eb;
+  /* Tailwind blue-600 */
+  --primary-color-light: #60a5fa;
+  /* Tailwind blue-400 */
+  --blue-950: #172554;
+  /* Very dark blue for background gradient */
 
-  --background-primary: #030712; /* gray-950 */
-  --background-secondary: #111827; /* gray-900 - often for cards/sections */
-  --background-tertiary: #1f2937; /* gray-800 - for even lighter dark backgrounds */
-  --text-primary: #f3f4f6; /* gray-100 - light text */
-  --text-secondary: #9ca3af; /* gray-400 - slightly darker light text */
-  --border-color: #374151; /* gray-700 - for subtle borders */
-  --card-background: #1f2937; /* gray-800 */
-  --shadow-color: rgba(0, 0, 0, 0.7); /* Darker shadow for dark theme */
+  /* Secondary Brand Purple Palette */
+  --secondary-color: #a855f7;
+  /* Tailwind purple-500 */
+  --secondary-color-rgb: 168, 85, 247;
+  --purple-950: #581c87;
+  /* Very dark purple */
 
-  /* Specific color variables from your original setup */
-  --blue-400: #60a5fa;
+  /* Grayscale Palette (Dark Theme Specific) */
+  --gray-950: #030712;
+  /* Tailwind gray-950 - almost black */
+  --gray-900: #111827;
+  /* Tailwind gray-900 - very dark gray */
+  --gray-800: #1f2937;
+  /* Tailwind gray-800 */
+  --gray-700: #374151;
+  /* Tailwind gray-700 */
+  --gray-400: #9ca3af;
+  /* Tailwind gray-400 - light grey */
+  --gray-300: #d1d5db;
+  /* Tailwind gray-300 */
+  --gray-100: #f3f4f6;
+  /* Tailwind gray-100 - off-white */
+
+  /* Semantic Colors (Dark Theme) */
+  --background-primary: var(--gray-950);
+  --background-secondary: var(--gray-900);
+  --background-secondary-rgb: 17, 24, 39;
+  /* RGB for gray-900 */
+  --background-tertiary: var(--gray-800);
+
+  --text-primary: var(--gray-100);
+  /* Main text color: off-white */
+  --text-primary-rgb: 243, 244, 246;
+  --text-secondary: var(--gray-400);
+  /* Secondary text color: light gray */
+  --text-secondary-rgb: 156, 163, 175;
+
+  --border-color: var(--gray-700);
+  --card-background: var(--gray-800);
+  --shadow-color: rgba(0, 0, 0, 0.7);
+
+  --white: #ffffff;
+  /* Pure white for strong contrast elements */
+
+  /* Other common colors (if used elsewhere) */
+
+    --blue-400: #60a5fa;
   --blue-500: #3b82f6;
   --blue-600: #2563eb;
   --blue-700: #1d4ed8;
@@ -37,61 +80,97 @@
   --gray-950: #030712;
   --white: #ffffff;
   --green-400: #4ade80;
-  --yellow-400: #facc15;
+  --yellow-400: #facc15; 
+  --dark-white: #d1d5db;
+
+
+    --light-theme-main-gradient-start: #1a202c;
+  /* Very dark almost black */
+  --light-theme-main-gradient-end: #4a5568;
+  /* Dark muted grey */
+  --light-theme-accent-gradient-start: #002d6b;
+  /* Even darker blue for start */
+  --light-theme-accent-gradient-end: #007bff;
 }
 
 /* Light Theme Variables */
-/* These variables will override the defaults when the 'light-theme' class is applied to the body or html */
 body.light-theme {
-  /* Modern Blue Primary Color Palette */
-  --primary-color: #007BFF; /* A vibrant, modern blue for main actions/emphasis */
-  --primary-color-dark: #0056b3; /* Darker shade for hover/active states */
-  --primary-color-light: #66b2ff; /* Lighter shade, perhaps for subtle gradients or outlines */
-  --secondary-color: #6c757d; /* A muted grey for secondary elements */
+  /* Primary Brand Blue Palette (Light Theme Adapted) */
+  --primary-color: #007BFF;
+  /* A vibrant, modern blue for main actions/emphasis */
+  --primary-color-rgb: 0, 123, 255;
+  --primary-color-dark: #0056b3;
+  /* Darker shade for hover/active states */
+  --primary-color-light: #66b2ff;
+  /* Lighter shade, perhaps for subtle gradients or outlines */
 
-  /* Backgrounds */
-  --background-primary: #ffffff; /* Pure white for main background */
-  --background-secondary: #f8f9fa; /* Very light grey for cards/sections */
-  --background-tertiary: #e9ecef; /* Slightly darker light grey for borders/dividers */
-
-  /* Text Colors */
-  --text-primary: #212529; /* Dark charcoal for main text */
-  --text-secondary: #495057; /* Muted dark grey for secondary text/labels */
-  --text-link: var(--primary-color); /* Links will use primary blue */
-
-  /* Borders & Shadows */
-  --border-color: #ced4da; /* Light grey for borders */
-  --card-background: #ffffff; /* White background for cards */
-  --shadow-color: rgba(0, 0, 0, 0.08); /* Lighter, subtle shadow for light theme */
-
-  /* Re-mapping some of your original colors to suit the light theme if needed,
-     or use the new variables consistently. */
-  --blue-400: #007BFF; /* Map to primary blue for consistency */
-  --blue-500: #007BFF;
-  --blue-600: #0056b3; /* Darker blue */
-  --blue-700: #004085;
-  --blue-950: #002752; /* Very dark blue for specific contrast */
-  --purple-500: #6c757d; /* Muted purple to secondary grey */
-  --purple-600: #5a6268;
-  --purple-700: #495057;
+  /* Secondary Brand Color (Light Theme Adapted) */
+  --secondary-color: #6c757d;
+  /* Muted grey for secondary elements in light theme */
+  --secondary-color-rgb: 108, 117, 125;
   --purple-950: #212529;
+  /* Re-map for light theme if needed, or define a new var for dark accents */
 
-  --gray-100: #212529; /* Light text becomes dark text in light theme */
-  --gray-300: #495057;
-  --gray-400: #6c757d;
-  --gray-500: #adb5bd;
-  --gray-600: #ced4da;
-  --gray-700: #e9ecef;
-  --gray-800: #f8f9fa;
-  --gray-900: #ffffff;
-  --gray-950: #ffffff; /* Dark background becomes white in light theme */
-  --white: #212529; /* White text becomes dark text in light theme */
+  /* Grayscale Palette (Light Theme Specific - often inverted from dark theme) */
+  --gray-950: #ffffff;
+  /* Becomes white */
+  --gray-900: #f8f9fa;
+  /* Becomes very light grey */
+  --gray-800: #e9ecef;
+  /* Becomes light grey */
+  --gray-700: #ced4da;
+  /* Becomes mid-grey */
+  --gray-400: #adb5bd;
+  /* Becomes darker mid-grey */
+  --gray-300: #6c757d;
+  /* Becomes dark grey */
+  --gray-100: #212529;
+  --dark-white: #d1d5db;
+  /* Becomes dark charcoal */
+  --purple-500: #a855f7;
+  --purple-600: #9333ea;
+  --purple-700: #7c3aed;
+  --purple-950: #581c87;
+  /* Semantic Colors (Light Theme) */
+  --background-primary: #ffffff;
+  /* Main background: pure white */
+  --background-secondary: #f8f9fa;
+  /* Secondary background: very light grey */
+  --background-secondary-rgb: 248, 249, 250;
+  --background-tertiary: #e9ecef;
 
-  /* If you have specific success/error/warning colors, define them for light theme */
-  --green-400: #28a745;
-  --yellow-400: #ffc107;
+  --text-primary: #2b2b2d;
+  /* Main text color: dark charcoal */
+  --text-primary-rgb: 33, 37, 41;
+  --text-secondary: #6e747d;
+  /* Secondary text color: muted dark grey */
+  --text-secondary-rgb: 73, 80, 87;
+  --darker-text-primary: #0f172a;
+  /* Even darker, near black */
+  --darker-text-secondary: #334155;
+  /* A dark gray for secondary links */
+
+  --border-color: #ced4da;
+  --card-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+    --green-400: #4ade80;
+  --yellow-400: #facc15;
+  --white: #ffffff;
+  /* 'White' text becomes dark for contrast on light backgrounds */
+
+  /* Specific Gradient Colors for Light Theme (No longer directly used by HeroSection text, but kept if other elements use them) */
+  --light-theme-main-gradient-start: #1a202c;
+  /* Very dark almost black */
+  --light-theme-main-gradient-end: #4a5568;
+  /* Dark muted grey */
+  --light-theme-accent-gradient-start: #002d6b;
+  /* Even darker blue for start */
+  --light-theme-accent-gradient-end: #007bff;
+  /* Primary vibrant blue */
+  
 }
 
+/* --- Global Styles & Layout --- */
 html {
   font-family: "Space Grotesk", sans-serif;
   scroll-behavior: smooth;
@@ -99,17 +178,17 @@ html {
 
 body {
   font-family: "Space Grotesk", sans-serif;
-  /* Use CSS variables for theme-dependent properties */
   background-color: var(--background-primary);
   color: var(--text-primary);
-  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /* Smooth transition */
 }
 
 section {
   scroll-margin-top: 50px;
 }
 
-/* Keyframe animations (remain theme-agnostic) */
+/* --- Animations --- */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -126,23 +205,24 @@ section {
   animation: fadeInUp 0.8s ease-out forwards;
 }
 
-.grid > div:nth-child(1).animate-fade-in-up {
+/* Animation delays */
+.grid>div:nth-child(1).animate-fade-in-up {
   animation-delay: 0ms;
 }
 
-.grid > div:nth-child(2).animate-fade-in-up {
+.grid>div:nth-child(2).animate-fade-in-up {
   animation-delay: 100ms;
 }
 
-.grid > div:nth-child(3).animate-fade-in-up {
+.grid>div:nth-child(3).animate-fade-in-up {
   animation-delay: 200ms;
 }
 
-.grid > div:nth-child(4).animate-fade-in-up {
+.grid>div:nth-child(4).animate-fade-in-up {
   animation-delay: 300ms;
 }
 
-
+/* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
   .text-5xl {
     font-size: 2.5rem;
